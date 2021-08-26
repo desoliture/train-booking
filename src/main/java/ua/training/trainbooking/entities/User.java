@@ -5,4 +5,5 @@ package ua.training.trainbooking.entities;
  */
 
 public class User {
+    
 }
