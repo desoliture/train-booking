@@ -1,8 +1,10 @@
 package ua.training.trainbooking.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ua.training.trainbooking.services.UserService;
 
 /**
  * @author Kozka Ivan
@@ -10,6 +12,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/users")
 public class UserController {
+    UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping
     public String getUsers(Model model) {
         //TODO: get all users from DB and put in model
